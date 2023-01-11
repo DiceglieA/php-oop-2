@@ -12,8 +12,14 @@ class Product {
     }
 
     public function getPrice()
-	{
-		return $this->price;
+	{   
+        if ($this->price < 0 ){
+            throw new Exception('prezzo non valido');
+        } else {
+            return $this->price;
+        }
+        
 	}
+
 }
 ?>
